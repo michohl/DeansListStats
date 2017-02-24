@@ -6,12 +6,12 @@ Description: Process all avaialable lists of UNI Dean's List students and extrac
 """
 import os
 
-fileList = os.listdir(os.getcwd())
+fileList = os.listdir(os.getcwd()+"/semesters/")
 masterDict = dict()
 
 for eachFile in fileList:
     if eachFile != "HonorsInformation.py":
-        fin = open(eachFile,"r")
+        fin = open(os.getcwd()+"/semesters/"+eachFile,"r")
         for line in fin:
             if line == '\n' or line == '':
                 pass
