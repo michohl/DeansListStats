@@ -77,9 +77,19 @@ print("Seven Semesters - " + str((sevenSemesters*100)/totalStudents) + "% of stu
 print("Eight Semesters - " + str((eightSemesters*100)/totalStudents) + "% of students")
 print(" ")
 
-#stop program from exiting immediately
-input("Press Enter to Exit")
-
+while True:
+    print("E to exit.")
+    studentInput = raw_input("Please enter a name of a student you would like to view information on: ")
+    if studentInput.lower() == "e":
+        exit()
+    if not studentInput in masterDict.keys():
+        print("The student " + studentInput + " has not been on the dean's list before.")
+        print("DISCLAIMER: if the name was input incorrectly then this could be a false result")
+    else:
+        print("The student " + studentInput + " was on the dean's list for the following semesters: ")
+        for semester in masterDict[studentInput]:
+            print(semester)
+    print(" ")
 
 
 
