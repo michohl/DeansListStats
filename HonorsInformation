@@ -1,8 +1,9 @@
+#!/usr/bin/python
+
 """
-File: HonorsInformation.py
+File: HonorsInformation
 Author: Michael Riesberg-Timmer
-Description: Process all avaialable lists of UNI Dean's List students and extract
-            information
+Description: Process all avaialable lists of UNI Dean's List students and extract information
 """
 import os
 
@@ -10,7 +11,7 @@ fileList = os.listdir(os.getcwd()+"/semesters/")
 masterDict = dict()
 
 for eachFile in fileList:
-    if eachFile != "HonorsInformation.py":
+    if eachFile != "HonorsInformation":
         fin = open(os.getcwd()+"/semesters/"+eachFile,"r")
         for line in fin:
             if line == '\n' or line == '':
@@ -90,27 +91,3 @@ while True:
         for semester in masterDict[studentInput]:
             print(semester)
     print(" ")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
