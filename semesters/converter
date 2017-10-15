@@ -1,0 +1,36 @@
+#!/usr/bin/python
+"""
+This file takes a file downloaded from the UNI dean's list database and converts it into easy to read text
+"""
+import sys
+
+try:
+	fin = open(sys.argv[1],"r")
+except:
+	print "That was not a valid file to read"
+	print sys.argv[0] + " <input file> <output file>"
+	exit()
+try:
+	fout = open(sys.argv[2],"w")
+except:
+	print "That was not a valid file to write to"
+	print sys.argv[0] + " <input file> <output file>"
+	exit()
+
+for line in fin:
+	line = line.split()
+	if len(line)==0:
+		continue
+	else:
+		try:
+			for name in line[line.index('IA')+1:]:
+				fout.write(name)
+				fout.write(" ")
+			fout.write("\n")
+		except:
+			continue
+
+
+
+fin.close()
+fout.close()
