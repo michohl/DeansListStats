@@ -90,4 +90,4 @@ while True:
         print("The student " + studentInput + " was on the dean's list for the following semesters: ")
         for semester in masterDict[studentInput]:
             print(semester)
-    print(" ")
+print(" ")
