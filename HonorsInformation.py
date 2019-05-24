@@ -24,7 +24,9 @@ for eachFile in fileList:
                 elif len(line) == 2:
                     student = line[0] + " " + line[1]
                     
-                    
+                #force to lowercase for consistency between dictionary and user
+                #input later
+                student = student.lower()    
                 
                 if student in masterDict:
                     masterDict[student].add(eachFile[:-4])
@@ -65,8 +67,7 @@ for student in masterDict:
 
 
 print("The following lines are the number of semesters a student was on the Dean's List and the percentage of all Dean's List students to be on the Dean's List that many times\n")
-print("A total of " + str(int(totalStudents)) + " students have been on the
-        honor roll between the Fall of 2012 and the Fall of 2018")
+print("A total of " + str(int(totalStudents)) + " students have been on the honor roll between the Fall of 2012 and the Fall of 2018")
 print("One Semester - " + str((oneSemester*100)/totalStudents) + "% of students")
 print("Two Semesters - " + str((twoSemesters*100)/totalStudents) + "% of students")
 print("Three Semesters - " + str((threeSemesters*100)/totalStudents) + "% of students")
@@ -80,13 +81,14 @@ print(" ")
 while True:
     print("E to exit.")
     studentInput = input("Please enter a name of a student you would like to view information on: ")
-    if studentInput.lower() == "e":
+    student_lower = studentInput.lower()
+    if student_lower == "e":
         exit()
-    if not studentInput in masterDict.keys():
+    if not student_lower in masterDict.keys():
         print("The student " + studentInput + " has not been on the dean's list before.")
         print("DISCLAIMER: if the name was input incorrectly then this could be a false result")
     else:
         print("The student " + studentInput + " was on the dean's list for the following semesters: ")
-        for semester in masterDict[studentInput]:
+        for semester in masterDict[student_lower]:
             print(semester)
 print(" ")
