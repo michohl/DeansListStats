@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 """
 File: HonorsInformation
 Author: Michael Riesberg-Timmer
@@ -80,7 +78,7 @@ print(" ")
 
 while True:
     print("E to exit.")
-    studentInput = raw_input("Please enter a name of a student you would like to view information on: ")
+    studentInput = input("Please enter a name of a student you would like to view information on: ")
     if studentInput.lower() == "e":
         exit()
     if not studentInput in masterDict.keys():
