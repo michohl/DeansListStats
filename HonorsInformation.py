@@ -65,8 +65,7 @@ for student in masterDict:
 
 
 print("The following lines are the number of semesters a student was on the Dean's List and the percentage of all Dean's List students to be on the Dean's List that many times\n")
-print("A total of " + str(int(totalStudents)) + " students have been on the
-        honor roll between the Fall of 2012 and the Fall of 2018")
+print("A total of " + str(int(totalStudents)) + " students have been on the honor roll between the Fall of 2012 and the Fall of 2018")
 print("One Semester - " + str((oneSemester*100)/totalStudents) + "% of students")
 print("Two Semesters - " + str((twoSemesters*100)/totalStudents) + "% of students")
 print("Three Semesters - " + str((threeSemesters*100)/totalStudents) + "% of students")
