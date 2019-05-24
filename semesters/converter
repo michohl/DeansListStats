@@ -7,14 +7,14 @@ import sys
 try:
 	fin = open(sys.argv[1],"r")
 except:
-	print "That was not a valid file to read"
-	print sys.argv[0] + " <input file> <output file>"
+	print("That was not a valid file to read")
+	print(sys.argv[0] + " <input file> <output file>")
 	exit()
 try:
 	fout = open(sys.argv[2],"w")
 except:
-	print "That was not a valid file to write to"
-	print sys.argv[0] + " <input file> <output file>"
+	print("That was not a valid file to write to")
+	print(sys.argv[0] + " <input file> <output file>")
 	exit()
 
 for line in fin:
